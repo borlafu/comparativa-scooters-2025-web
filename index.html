@@ -1,44 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comparativa Scooters 125cc - Málaga</title>
+  <title>Comparativa Scooters 125cc - Madrid, Málaga, Valencia, Barcelona, Sevilla</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     :root {
-      --primary-color: #2c3e50;
-      --secondary-color: #3498db;
-      --background-color: #f4f6f8;
+      --primary-color: #0d47a1;
+      --primary-light: #5472d3;
+      --primary-dark: #002171;
+      --secondary-color: #00b0ff;
+      --secondary-light: #69e2ff;
+      --secondary-dark: #0081cb;
+      --text-primary: #212121;
+      --text-secondary: #757575;
+      --text-light: #ffffff;
+      --background-color: #f5f9fc;
       --card-background: #ffffff;
-      --border-radius: 10px;
-      --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      --border-radius: 12px;
+      --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 1rem;
+      font-family: 'Segoe UI', 'Roboto', sans-serif;
       background-color: var(--background-color);
-      color: var(--primary-color);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    h1, h2, h3 {
-      color: var(--primary-color);
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
-    h1 {
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: var(--text-light);
+      padding: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.7;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
       text-align: center;
+    }
+
+    .header-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .header-content p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: var(--card-background);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      background-color: var(--primary-light);
+      color: var(--text-light);
+    }
+
+    /* Main Content Styles */
+    main {
+      padding: 3rem 0;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.8rem;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: var(--secondary-color);
+      border-radius: 2px;
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
       margin-bottom: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 2rem;
       background-color: var(--card-background);
-      border-radius: var(--border-radius);
       overflow: hidden;
-      box-shadow: var(--box-shadow);
     }
 
     th, td {
@@ -47,160 +168,671 @@
     }
 
     th {
-      background-color: var(--secondary-color);
-      color: white;
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    th:hover {
+      background-color: var(--primary-dark);
     }
 
     tr:nth-child(even) {
-      background-color: #ecf0f1;
+      background-color: rgba(84, 114, 211, 0.05);
     }
 
-    .scooter {
-      margin-bottom: 3rem;
+    td {
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    /* Scooter Cards */
+    .scooters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .scooter-card {
       background-color: var(--card-background);
-      padding: 1rem;
       border-radius: var(--border-radius);
+      overflow: hidden;
       box-shadow: var(--box-shadow);
+      transition: var(--transition);
     }
 
-    .scooter img {
-      max-width: 100%;
-      height: auto;
-      border-radius: var(--border-radius);
+    .scooter-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .scooter-image {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .scooter-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .scooter-card:hover .scooter-image img {
+      transform: scale(1.05);
+    }
+
+    .scooter-content {
+      padding: 1.5rem;
+    }
+
+    .scooter-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .scooter-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      transition: var(--transition);
+    }
+
+    .scooter-link i {
+      margin-left: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    .scooter-link:hover {
+      color: var(--secondary-dark);
+    }
+
+    .pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
       margin-top: 1rem;
     }
 
-    .link {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: var(--secondary-color);
-      text-decoration: none;
-      font-weight: bold;
+    .pros, .cons {
+      background-color: rgba(84, 114, 211, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
     }
 
-    .link:hover {
-      text-decoration: underline;
+    .pros h4, .cons h4 {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
     }
 
-    ul {
-      margin: 1rem 0;
+    .pros h4 i {
+      color: #4caf50;
+      margin-right: 0.5rem;
+    }
+
+    .cons h4 i {
+      color: #f44336;
+      margin-right: 0.5rem;
+    }
+
+    .pros ul, .cons ul {
+      list-style: none;
       padding-left: 1.5rem;
     }
 
-    ol {
+    .pros li, .cons li {
+      position: relative;
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    .pros li:before {
+      content: '✓';
+      position: absolute;
+      left: -1.2rem;
+      color: #4caf50;
+    }
+
+    .cons li:before {
+      content: '✗';
+      position: absolute;
+      left: -1.2rem;
+      color: #f44336;
+    }
+
+    /* Ranking Section */
+    .ranking-container {
       background-color: var(--card-background);
-      padding: 1rem 2rem;
       border-radius: var(--border-radius);
+      padding: 2rem;
       box-shadow: var(--box-shadow);
     }
 
-    @media (max-width: 768px) {
-      body {
-        padding: 0.5rem;
+    .ranking-list {
+      list-style: none;
+      counter-reset: ranking;
+    }
+
+    .ranking-list li {
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background-color: rgba(84, 114, 211, 0.05);
+      border-radius: 8px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-left: 3.5rem;
+    }
+
+    .ranking-list li:before {
+      counter-increment: ranking;
+      content: counter(ranking);
+      position: absolute;
+      left: 1rem;
+      width: 2rem;
+      height: 2rem;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    /* Comparison Card */
+    .comparison-quick {
+      background-color: var(--card-background);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-dark);
+      color: var(--text-light);
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .footer-content {
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .scooters-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
+    }
+
+    @media (max-width: 768px) {
+      .header-content h1 {
+        font-size: 2rem;
+      }
+
+      .scooters-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pros-cons {
+        grid-template-columns: 1fr;
+      }
+
       table, th, td {
         font-size: 0.9rem;
       }
-      .scooter h3 {
-        font-size: 1.1rem;
+
+      th, td {
+        padding: 0.8rem 0.5rem;
       }
+    }
+
+    @media (max-width: 576px) {
+      .nav-links {
+        gap: 0.5rem;
+      }
+
+      .nav-links a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+      }
+
+      .header-content h1 {
+        font-size: 1.8rem;
+      }
+
+      .header-content p {
+        font-size: 1rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    /* Additional Flair */
+    .star {
+      color: #ffc107;
+    }
+
+    .specs-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .spec-pill {
+      display: inline-flex;
+      align-items: center;
+      background-color: rgba(0, 176, 255, 0.1);
+      border-radius: 50px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.85rem;
+    }
+
+    .spec-pill i {
+      margin-right: 0.3rem;
+      color: var(--secondary-color);
     }
   </style>
 </head>
+
 <body>
-  <h1>Comparativa de Scooters 125cc para Málaga</h1>
+  <header>
+    <div class="header-content container">
+      <h1>Comparativa de Scooters 125cc</h1>
+      <p>Este análisis recoge los mejores scooters 125cc adecuados para trayectos urbanos y de media distancia,
+        confortables para dos personas y con capacidad de carga. Ideal para moverte en Málaga y alrededores.</p>
+    </div>
+  </header>
 
-  <p>Este análisis recoge los mejores scooters 125cc adecuados para trayectos urbanos y de media distancia, confortables para dos personas y con capacidad de carga. Ideal para moverte en Málaga y alrededores.</p>
+  <nav>
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="#caracteristicas">Características</a></li>
+        <li><a href="#modelos">Modelos</a></li>
+        <li><a href="#comparativa">Comparativa</a></li>
+        <li><a href="#ranking">Ranking</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <h2>Comparativa de Características Técnicas</h2>
-  <table>
-    <tr>
-      <th>Modelo</th>
-      <th>Precio</th>
-      <th>Peso</th>
-      <th>Potencia</th>
-      <th>Depósito</th>
-      <th>Autonomía</th>
-      <th>Almacenaje</th>
-    </tr>
-    <tr><td>Honda PCX 125</td><td>3.360 €</td><td>133 kg</td><td>11 CV</td><td>8.1 L</td><td>~350 km</td><td>30 L</td></tr>
-    <tr><td>Kymco X-Town CT 125</td><td>4.099 €</td><td>167 kg</td><td>12.7 CV</td><td>10.5 L</td><td>~350 km</td><td>29 L</td></tr>
-    <tr><td>Kymco Sky Town 125</td><td>2.999 €</td><td>126 kg</td><td>11 CV</td><td>7 L</td><td>~300 km</td><td>36 L</td></tr>
-    <tr><td>Yamaha NMAX 125</td><td>3.599 €</td><td>132 kg</td><td>11 CV</td><td>6.6 L</td><td>~260 km</td><td>23 L</td></tr>
-    <tr><td>SYM Cruisym Alpha 125</td><td>4.500 €</td><td>172 kg</td><td>12 CV</td><td>7 L</td><td>~320 km</td><td>21 L</td></tr>
-    <tr><td>Suzuki Burgman Street 125EX</td><td>3.099 €</td><td>112 kg</td><td>11 CV</td><td>6.8 L</td><td>~360 km</td><td>21 L</td></tr>
-  </table>
+  <main class="container">
+    <section id="caracteristicas">
+      <h2>Características Técnicas</h2>
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Modelo</th>
+            <th>Precio</th>
+            <th>Peso</th>
+            <th>Potencia</th>
+            <th>Depósito</th>
+            <th>Autonomía</th>
+            <th>Almacenaje</th>
+          </tr>
+          <tr>
+            <td>Honda PCX 125</td>
+            <td>3.360 €</td>
+            <td>133 kg</td>
+            <td>11 CV</td>
+            <td>8.1 L</td>
+            <td>~350 km</td>
+            <td>30 L</td>
+          </tr>
+          <tr>
+            <td>Kymco X-Town CT 125</td>
+            <td>4.099 €</td>
+            <td>167 kg</td>
+            <td>12.7 CV</td>
+            <td>10.5 L</td>
+            <td>~350 km</td>
+            <td>29 L</td>
+          </tr>
+          <tr>
+            <td>Kymco Sky Town 125</td>
+            <td>2.999 €</td>
+            <td>126 kg</td>
+            <td>11 CV</td>
+            <td>7 L</td>
+            <td>~300 km</td>
+            <td>36 L</td>
+          </tr>
+          <tr>
+            <td>Yamaha NMAX 125</td>
+            <td>3.599 €</td>
+            <td>132 kg</td>
+            <td>11 CV</td>
+            <td>6.6 L</td>
+            <td>~260 km</td>
+            <td>23 L</td>
+          </tr>
+          <tr>
+            <td>SYM Cruisym Alpha 125</td>
+            <td>4.500 €</td>
+            <td>172 kg</td>
+            <td>12 CV</td>
+            <td>7 L</td>
+            <td>~320 km</td>
+            <td>21 L</td>
+          </tr>
+          <tr>
+            <td>Suzuki Burgman Street 125EX</td>
+            <td>3.099 €</td>
+            <td>112 kg</td>
+            <td>11 CV</td>
+            <td>6.8 L</td>
+            <td>~360 km</td>
+            <td>21 L</td>
+          </tr>
+        </table>
+      </div>
+    </section>
 
-  <h2>Modelos Analizados</h2>
+    <section id="modelos">
+      <h2>Modelos Analizados</h2>
+      <div class="scooters-grid">
+        <!-- Honda PCX 125 -->
+        <div class="scooter-card">
+          <div class="scooter-image">
+            <img
+              src="https://www.honda.es/content/dam/central/motorcycles/scooters/pcx125-2025/overview/discover-more/honda-pcx125-discover-more-01-1728x972-desktop.jpg/jcr:content/renditions/fb_r_w.webp"
+              alt="Honda PCX 125">
+          </div>
+          <div class="scooter-content">
+            <h3>Honda PCX 125</h3>
+            <a href="https://www.honda.es/motorcycles/range/scooter/pcx-125/overview.html" class="scooter-link" target="_blank">
+              Ver en Honda <i class="fas fa-external-link-alt"></i>
+            </a>
+            <div class="specs-pills">
+              <span class="spec-pill"><i class="fas fa-gas-pump"></i> 2.1L/100km</span>
+              <span class="spec-pill"><i class="fas fa-weight-hanging"></i> 133 kg</span>
+              <span class="spec-pill"><i class="fas fa-tachometer-alt"></i> 11 CV</span>
+            </div>
+            <div class="pros-cons">
+              <div class="pros">
+                <h4><i class="fas fa-plus-circle"></i> Pros</h4>
+                <ul>
+                  <li>Bajo consumo (2.1L/100km)</li>
+                  <li>Gran capacidad de carga</li>
+                  <li>Excelente fiabilidad Honda</li>
+                  <li>Sistema Start/Stop</li>
+                </ul>
+              </div>
+              <div class="cons">
+                <h4><i class="fas fa-minus-circle"></i> Contras</h4>
+                <ul>
+                  <li>No es la más potente</li>
+                  <li>Precio algo superior</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <div class="scooter">
-    <h3>Honda PCX 125</h3>
-    <a href="https://www.honda.es/motorcycles/range/scooter/pcx-125/overview.html" class="link" target="_blank">Ver página oficial</a>
-    <p><strong>Pros:</strong></p>
-    <ul><li>Gran eficiencia de combustible</li><li>Diseño moderno y elegante</li><li>Buena capacidad de carga</li></ul>
-    <p><strong>Contras:</strong></p>
-    <ul><li>Algo más caro que la media</li><li>No es la más potente de la categoría</li></ul>
-    <img src="https://powersports.honda.com/-/media/Images/Honda/Model/2025/PCX/2025-PCX-Red-Front-Right-3Q.jpg" alt="Honda PCX 125">
-  </div>
+        <!-- Yamaha NMAX 125 -->
+        <div class="scooter-card">
+          <div class="scooter-image">
+            <img
+              src="https://cdn2.yamaha-motor.eu/prod/product-assets/2025/G125YM/2025-Yamaha-G125YM-EU-Icon_Black_-Accessorized-detail-024-03.jpg"
+              alt="Yamaha NMAX 125">
+          </div>
+          <div class="scooter-content">
+            <h3>Yamaha NMAX 125</h3>
+            <a href="https://www.yamaha-motor.eu/es/es/scooters/sport/pdp/nmax-125-2025/" class="scooter-link" target="_blank">
+              Ver en Yamaha <i class="fas fa-external-link-alt"></i>
+            </a>
+            <div class="specs-pills">
+              <span class="spec-pill"><i class="fas fa-gas-pump"></i> 2.2L/100km</span>
+              <span class="spec-pill"><i class="fas fa-weight-hanging"></i> 132 kg</span>
+              <span class="spec-pill"><i class="fas fa-tachometer-alt"></i> 11 CV</span>
+            </div>
+            <div class="pros-cons">
+              <div class="pros">
+                <h4><i class="fas fa-plus-circle"></i> Pros</h4>
+                <ul>
+                  <li>Excelente frenada con ABS</li>
+                  <li>Motor BlueCore eficiente</li>
+                  <li>Diseño moderno y deportivo</li>
+                </ul>
+              </div>
+              <div class="cons">
+                <h4><i class="fas fa-minus-circle"></i> Contras</h4>
+                <ul>
+                  <li>Espacio bajo asiento justo</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <div class="scooter">
-    <h3>Kymco X-Town CT 125</h3>
-    <a href="https://www.kymco.es/scooters/x-town-ct-125" class="link" target="_blank">Ver página oficial</a>
-    <p><strong>Pros:</strong></p>
-    <ul><li>Muy cómoda para dos personas</li><li>Buena capacidad de tanque y potencia</li><li>Ideal para trayectos interurbanos</li></ul>
-    <p><strong>Contras:</strong></p>
-    <ul><li>Más pesada que la media</li><li>Precio cercano al límite del presupuesto</li></ul>
-    <img src="https://www.kymco.co.uk/media/0n1l3q3c/x-town-ct-125.jpg" alt="Kymco X-Town 125">
-  </div>
+        <!-- SYM Symphony 125 -->
+        <div class="scooter-card">
+          <div class="scooter-image">
+            <img src="https://www.sym.com.es/images/modelos/med_width_1694080255sym-moto-scooter-ciudad-symphony-sr-125.webp"
+              alt="SYM Symphony 125">
+          </div>
+          <div class="scooter-content">
+            <h3>SYM Symphony 125</h3>
+            <a href="https://www.sym.com.es/symphony-sr-125-p-39-es" class="scooter-link" target="_blank">
+              Ver en SYM <i class="fas fa-external-link-alt"></i>
+            </a>
+            <div class="specs-pills">
+              <span class="spec-pill"><i class="fas fa-gas-pump"></i> 2.4L/100km</span>
+              <span class="spec-pill"><i class="fas fa-weight-hanging"></i> 126 kg</span>
+              <span class="spec-pill"><i class="fas fa-tachometer-alt"></i> 11 CV</span>
+            </div>
+            <div class="pros-cons">
+              <div class="pros">
+                <h4><i class="fas fa-plus-circle"></i> Pros</h4>
+                <ul>
+                  <li>Buena relación calidad-precio</li>
+                  <li>Ruedas altas para estabilidad</li>
+                  <li>Ligera y ágil en ciudad</li>
+                </ul>
+              </div>
+              <div class="cons">
+                <h4><i class="fas fa-minus-circle"></i> Contras</h4>
+                <ul>
+                  <li>Menos protección aerodinámica</li>
+                  <li>Acabados más simples</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <div class="scooter">
-    <h3>Kymco Sky Town 125</h3>
-    <a href="https://www.kymco.es/scooters/sky-town-125-abs" class="link" target="_blank">Ver página oficial</a>
-    <p><strong>Pros:</strong></p>
-    <ul><li>Precio muy competitivo</li><li>Buen espacio de carga</li><li>Ligera y maniobrable</li></ul>
-    <p><strong>Contras:</strong></p>
-    <ul><li>Autonomía algo limitada</li><li>Prestaciones básicas</li></ul>
-    <img src="https://kymco.com.cy/wp-content/uploads/2023/07/sky-town-125-1.jpg" alt="Kymco Sky Town 125">
-  </div>
+        <!-- Kymco X-Town 125 -->
+        <div class="scooter-card">
+          <div class="scooter-image">
+            <img
+              src="https://www.kymco.es/storage/app/media/products/X-Town%20CT%20125/1400x1400_XTown-CT_125_azul_Slider-sm.png"
+              alt="Kymco X-Town 125">
+          </div>
+          <div class="scooter-content">
+            <h3>Kymco X-Town 125</h3>
+            <a href="https://www.kymco.es/scooters/x-town-ct-125" class="scooter-link" target="_blank">
+              Ver en Kymco <i class="fas fa-external-link-alt"></i>
+            </a>
+            <div class="specs-pills">
+              <span class="spec-pill"><i class="fas fa-gas-pump"></i> 2.9L/100km</span>
+              <span class="spec-pill"><i class="fas fa-weight-hanging"></i> 167 kg</span>
+              <span class="spec-pill"><i class="fas fa-tachometer-alt"></i> 12.7 CV</span>
+            </div>
+            <div class="pros-cons">
+              <div class="pros">
+                <h4><i class="fas fa-plus-circle"></i> Pros</h4>
+                <ul>
+                  <li>Gran confort para piloto y pasajero</li>
+                  <li>Excelente estabilidad en carretera</li>
+                  <li>Mucho espacio de carga</li>
+                </ul>
+              </div>
+              <div class="cons">
+                <h4><i class="fas fa-minus-circle"></i> Contras</h4>
+                <ul>
+                  <li>Peso elevado para conducción urbana</li>
+                  <li>Consumo un poco mayor</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="scooter">
-    <h3>Yamaha NMAX 125</h3>
-    <a href="https://www.yamaha-motor.eu/es/es/scooters/sport/pdp/nmax-125-2025/" class="link" target="_blank">Ver página oficial</a>
-    <p><strong>Pros:</strong></p>
-    <ul><li>Alta fiabilidad y diseño compacto</li><li>Consumo muy eficiente</li><li>Tecnología moderna (ABS, conectividad)</li></ul>
-    <p><strong>Contras:</strong></p>
-    <ul><li>Depósito pequeño</li><li>Almacenaje limitado</li></ul>
-    <img src="https://www.yamaha-motor.eu/content/dam/yamaha-motor-eu/images/2025/nmax-125/nmax-125-2025-icon-black.jpg" alt="Yamaha NMAX 125">
-  </div>
+    <section id="comparativa">
+      <h2>Comparativa Rápida</h2>
+      <div class="comparison-quick">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th onclick="sortTable(0)">Modelo <i class="fas fa-sort"></i></th>
+                <th onclick="sortTable(1)">Consumo (L/100km) <i class="fas fa-sort"></i></th>
+                <th onclick="sortTable(2)">Capacidad de carga <i class="fas fa-sort"></i></th>
+                <th onclick="sortTable(3)">Confort pasajero <i class="fas fa-sort"></i></th>
+                <th onclick="sortTable(4)">Precio (€) <i class="fas fa-sort"></i></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Honda PCX 125</td>
+                <td>2.1</td>
+                <td>Alta</td>
+                <td>Media</td>
+                <td>3850</td>
+              </tr>
+              <tr>
+                <td>Yamaha NMAX 125</td>
+                <td>2.2</td>
+                <td>Media</td>
+                <td>Media</td>
+                <td>3999</td>
+              </tr>
+              <tr>
+                <td>SYM Symphony 125</td>
+                <td>2.4</td>
+                <td>Media</td>
+                <td>Baja</td>
+                <td>2899</td>
+              </tr>
+              <tr>
+                <td>Kymco X-Town 125</td>
+                <td>2.9</td>
+                <td>Alta</td>
+                <td>Alta</td>
+                <td>4199</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-  <div class="scooter">
-    <h3>SYM Cruisym Alpha 125</h3>
-    <a href="https://www.sym.com.es/cruisym-alpha-125-p-37-es" class="link" target="_blank">Ver página oficial</a>
-    <p><strong>Pros:</strong></p>
-    <ul><li>Buena potencia y estabilidad</li><li>Estética deportiva</li><li>Confortable para dos pasajeros</li></ul>
-    <p><strong>Contras:</strong></p>
-    <ul><li>Precio elevado</li><li>Más pesada que sus competidoras</li></ul>
-    <img src="https://www.sym-global.com/upload/product/2021/03/20210329164635_1.jpg" alt="SYM Cruisym 125">
-  </div>
+    <section id="ranking">
+      <h2>Ranking General</h2>
+      <div class="ranking-container">
+        <ol class="ranking-list">
+          <li>Honda PCX 125 <span class="star">★★★★★</span></li>
+          <li>Yamaha NMAX 125 <span class="star">★★★★☆</span></li>
+          <li>Kymco X-Town 125 <span class="star">★★★★☆</span></li>
+          <li>SYM Symphony 125 <span class="star">★★★☆☆</span></li>
+        </ol>
+      </div>
+    </section>
+  </main>
 
-  <div class="scooter">
-    <h3>Suzuki Burgman Street 125EX</h3>
-    <a href="https://moto.suzuki.es/motos/scooter/2024/burgman-street-125" class="link" target="_blank">Ver página oficial</a>
-    <p><strong>Pros:</strong></p>
-    <ul><li>Muy ligera y manejable</li><li>Gran autonomía para su cilindrada</li><li>Buen precio</li></ul>
-    <p><strong>Contras:</strong></p>
-    <ul><li>Capacidad de carga justa</li><li>Calidades algo básicas</li></ul>
-    <img src="https://www.globalsuzuki.com/motorcycle/smgs/products/360viewer/2024burgman-street-125ex/images/360view.jpg" alt="Suzuki Burgman Street 125EX">
-  </div>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p>© 2025 - Guía Comparativa de Scooters 125cc para Málaga</p>
+      </div>
+    </div>
+  </footer>
 
-  <h2>Ranking Final</h2>
-  <ol>
-    <li><strong>Honda PCX 125</strong> - ⭐⭐⭐⭐☆ (4.5/5)</li>
-    <li><strong>Kymco X-Town CT 125</strong> - ⭐⭐⭐⭐☆ (4.4/5)</li>
-    <li><strong>Kymco Sky Town 125</strong> - ⭐⭐⭐⭐☆ (4.3/5)</li>
-    <li><strong>Yamaha NMAX 125</strong> - ⭐⭐⭐⭐☆ (4.2/5)</li>
-    <li><strong>SYM Cruisym Alpha 125</strong> - ⭐⭐⭐☆ (3.9/5)</li>
-    <li><strong>Suzuki Burgman Street 125EX</strong> - ⭐⭐⭐☆ (3.8/5)</li>
-  </ol>
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Table sorting functionality
+    function sortTable(colIndex) {
+      const table = document.querySelector('#comparativa table');
+      const tbody = table.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      
+      // Toggle sorting direction
+      const sortDirection = table.getAttribute('data-sort-dir') === 'asc' ? -1 : 1;
+      table.setAttribute('data-sort-dir', sortDirection === 1 ? 'asc' : 'desc');
+      
+      // Sort rows based on cell content
+      rows.sort((a, b) => {
+        const cellA = a.querySelectorAll('td')[colIndex].textContent;
+        const cellB = b.querySelectorAll('td')[colIndex].textContent;
+        
+        // Check if content is numeric
+        if (!isNaN(parseFloat(cellA)) && !isNaN(parseFloat(cellB))) {
+          return sortDirection * (parseFloat(cellA) - parseFloat(cellB));
+        } else {
+          return sortDirection * cellA.localeCompare(cellB);
+        }
+      });
+      
+      // Remove rows and re-add in sorted order
+      rows.forEach(row => tbody.removeChild(row));
+      rows.forEach(row => tbody.appendChild(row));
+    }
+
+    // Add animation classes when elements come into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
+
 </html>
